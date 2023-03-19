@@ -3,12 +3,12 @@
 #include <malloc.h>
 #include "CircuralBuffer.h"
 
-
+#define BUFF_SIZE 32
 
 int main(int argc, char **argv)
 {
     char* data = argv[1];
-    size_t dataSize = sizeof(data);
+    size_t dataSize = BUFF_SIZE;
     printf("DataSize = %d", dataSize);
     CircularBuffer buffer;
     CircularBuffer_init(&buffer, &dataSize);
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     CircularBuffer_clear(&buffer);
     printf("============================================================\n");
     data = argv[2];
-    dataSize = sizeof(data);
+    dataSize = BUFF_SIZE;
     for(int i = 0; i < dataSize; i++)
     {
         CircularBuffer_putData(&buffer, data[i]);

@@ -5,6 +5,8 @@
 #include <malloc.h>
 #include <stdbool.h>
 
+#define CB(X)   cb->X
+
 typedef struct {
     char* buff;
     int head, tail, count, size;
